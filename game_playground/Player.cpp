@@ -2,10 +2,10 @@
 
 
 
-Player::Player(sf::Vector2i pos, int movespeed, int health, std::string texturePath)
+Player::Player(sf::Vector2f pos, float movespeed, int health, std::string texturePath)
 {
 	this->pos = pos;
-	this->movespeed; 
+	this->movespeed = movespeed; 
 	this->health = health;
 	this->texture.loadFromFile(texturePath);
 	this->sprite.setTexture(this->texture);
