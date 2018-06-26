@@ -1,5 +1,6 @@
 #include "Player.h"
-
+#define _USE_MATH_DEFINES 
+#include <math.h>  
 
 
 Player::Player(sf::Vector2f pos, float movespeed, int health, std::string texturePath)
@@ -32,7 +33,7 @@ void Player::draw(sf::RenderTarget & renderTarget) const
 }
 
 
-void Player::movementHandler()
+void Player::movementHandler(const sf::RenderWindow & window)
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))	pos.y -= movespeed;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))	pos.y += movespeed;
@@ -40,4 +41,15 @@ void Player::movementHandler()
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))	pos.x += movespeed;
 
 	this->sprite.setPosition(pos);
+
+	const auto mouseWindowPosition = sf::Mouse::getPosition(window);
+	const auto mouseWorldPosition = window.mapPixelToCoords(mouseWindowPosition);
+	const auto fromOrign = this->pos - mouseWorldPosition;
+
+	const float rotation = atan2(fromOrign.x, fromOrign.y) * 180.0f / M_PI;
+	this->sprite.setRotation(360.0f - rotation);
+
+
+
+
 }
