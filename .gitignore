@@ -8,7 +8,10 @@
 *.user
 *.userosscache
 *.sln.docstates
-
+*.vcprojx
+*.user
+*.filters
+*.sln
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
@@ -328,3 +331,6 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+*.vcxproj
+game_playground/game_playground.vcxproj.filters
+*.filters
