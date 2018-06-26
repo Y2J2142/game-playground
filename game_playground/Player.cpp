@@ -30,3 +30,14 @@ void Player::draw(sf::RenderTarget & renderTarget) const
 {
 	renderTarget.draw(this->sprite);
 }
+
+
+void Player::movementHandler()
+{
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))	pos.y -= movespeed;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))	pos.y += movespeed;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))	pos.x -= movespeed;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))	pos.x += movespeed;
+
+	this->sprite.setPosition(pos);
+}
