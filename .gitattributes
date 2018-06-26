@@ -1,8 +1,9 @@
+*text = auto 
 #sources
 *.c text
 *.cc text
 *.cxx text
-*.cpp text
+*.cpp text eol=crlf
 *.c++ text
 *.hpp text
 *.h text

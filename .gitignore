@@ -334,3 +334,5 @@ ASALocalRun/
 *.vcxproj
 game_playground/game_playground.vcxproj.filters
 *.filters
+
+game_playground/game_playground\.cpp
