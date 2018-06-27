@@ -2,6 +2,7 @@
 #include <iostream>
 TileMap::TileMap()
 {
+	tileSize = sf::Vector2u(128, 128);
 }
 
 
@@ -10,7 +11,7 @@ TileMap::~TileMap()
 }
 
 
-bool TileMap::load(const std::string & tileMapPath, sf::Vector2u tileSize, std::vector<std::vector<int>> level)
+bool TileMap::load(const std::string & tileMapPath, std::vector<std::vector<int>> level)
 {
 	if (!this->tileset.loadFromFile(tileMapPath)) return false;
 	

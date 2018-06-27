@@ -28,7 +28,7 @@ int main()
 	Player player(sf::Vector2f(window.getSize().x / 2, window.getSize().y / 2), 5, 100, "../sprites/Knight.png");
 	window.setFramerateLimit(60);
 	TileMap map;
-	if (!map.load("../tileset/tileset.png", sf::Vector2u(32, 32), level)) return 1;
+	if (!map.load("../tileset/tileset.png", level)) return 1;
 
 	while (window.isOpen())
 	{
