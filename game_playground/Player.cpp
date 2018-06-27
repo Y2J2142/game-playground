@@ -16,7 +16,7 @@ Player::Player(sf::Vector2f pos, float movespeed, int health, std::string textur
 	this->sprite.setOrigin(x / 2, y / 2);
 	this->sprite.setScale(2.0f, 2.0f);
 	this->sprite.setPosition(sf::Vector2f(this->pos));
-	this->weapon = new MeleeWeapon(10, 10, 64, { -5, -10 }, "../sprites/sword_anim.png");
+	this->weapon = new MeleeWeapon(10, 10, 128, { -40, -10 }, "../sprites/sword_anim2.png");
 }
 
 
