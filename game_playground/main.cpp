@@ -38,8 +38,6 @@ int main()
 		window.draw(map);
 		player.update(window, window, clock.restart());
 		window.display();
-		if (player.weapon->animator.isPlayingAnimation())
-			std::cout << "playing\n";
 
 	}
 
