@@ -12,9 +12,10 @@ public:
 	
 
 
-	virtual void attack() const = 0;
-	virtual void update(const Character &) = 0;
+	virtual void attack() = 0;
+	virtual void update(sf::RenderWindow&, sf::RenderTarget&, const Character &, sf::Time) = 0;
 	virtual void draw(sf::RenderTarget &, sf::RenderStates) const = 0;
+	virtual void draw(sf::RenderTarget &) const = 0;
 	Weapon();
 	virtual ~Weapon() = 0;
 

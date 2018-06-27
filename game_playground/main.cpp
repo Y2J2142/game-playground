@@ -4,6 +4,7 @@
 #include <iostream>
 int main()
 {
+	sf::Clock clock;
 	std::vector<std::vector<int>> level =
 	{
 		{ 0, 0, 1, 0, 0, 0, 2, 0 },
@@ -35,9 +36,10 @@ int main()
 		window.clear();
 		window.setView(sf::View(player.pos, static_cast<sf::Vector2f>(window.getSize())));
 		window.draw(map);
-		window.draw(player);	
-		player.movementHandler(window);
+		player.update(window, window, clock.restart());
 		window.display();
+		if (player.weapon->animator.isPlayingAnimation())
+			std::cout << "playing\n";
 
 	}
 

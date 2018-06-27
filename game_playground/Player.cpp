@@ -16,7 +16,7 @@ Player::Player(sf::Vector2f pos, float movespeed, int health, std::string textur
 	this->sprite.setOrigin(x / 2, y / 2);
 	this->sprite.setScale(2.0f, 2.0f);
 	this->sprite.setPosition(sf::Vector2f(this->pos));
-	this->weapon = new MeleeWeapon(10, 10, 30, "../sprites/sword.png");
+	this->weapon = new MeleeWeapon(10, 10, 30, "../sprites/sword_anim.png");
 }
 
 
@@ -38,6 +38,13 @@ void Player::draw(sf::RenderTarget & renderTarget) const
 	renderTarget.draw(this->sprite);
 }
 
+void Player::update(sf::RenderWindow & renderWindow, sf::RenderTarget & output, sf::Time time)
+{
+	movementHandler(renderWindow);
+	draw(output);
+	this->weapon->update(renderWindow, output,*(this), time);
+}
+
 
 void Player::movementHandler(const sf::RenderWindow & window)
 {
@@ -45,6 +52,7 @@ void Player::movementHandler(const sf::RenderWindow & window)
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))	pos.y += movespeed;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))	pos.x -= movespeed;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))	pos.x += movespeed;
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Left))    weapon->attack();
 
 	this->sprite.setPosition(pos);
 
@@ -55,6 +63,6 @@ void Player::movementHandler(const sf::RenderWindow & window)
 	const float rotation = atan2(fromOrign.x, fromOrign.y) * 180.0f / M_PI;
 	this->sprite.setRotation(360.0f - rotation);
 	
-	this->weapon->update(*(this));
+	
 
 }

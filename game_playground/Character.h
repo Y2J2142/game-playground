@@ -14,5 +14,6 @@ public:
 
 	Character();
 	~Character();
+	virtual void update(sf::RenderWindow&, sf::RenderTarget&, sf::Time) =0;
 };
 
