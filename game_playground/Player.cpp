@@ -38,7 +38,8 @@ void Player::draw(sf::RenderTarget & renderTarget) const
 void Player::update(sf::RenderWindow & renderWindow, sf::RenderTarget & output, sf::Time time)
 {
 	movementHandler(renderWindow);
-	this->weapon->update(renderWindow, output, *(this), time);
+	if(weapon)
+		this->weapon->update(renderWindow, output, *(this), time);
 	draw(output);
 	
 }
@@ -50,7 +51,9 @@ void Player::movementHandler(const sf::RenderWindow & window)
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))	pos.y += movespeed;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))	pos.x -= movespeed;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))	pos.x += movespeed;
-	if (sf::Mouse::isButtonPressed(sf::Mouse::Left))    weapon->attack();
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Left))    
+		if(weapon)
+			weapon->attack();
 
 	this->sprite.setPosition(pos);
 
