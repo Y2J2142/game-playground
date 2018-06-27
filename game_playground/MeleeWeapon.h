@@ -4,12 +4,13 @@
 class MeleeWeapon : public Weapon
 {
 public:
-	float arc;
+
 	thor::Animator<sf::Sprite, std::string> animator;
 	thor::FrameAnimation attackAnimation;
+	sf::Vector2i offset;
 
 	MeleeWeapon() = delete;
-	MeleeWeapon(float damage, float range, float arc, std::string textureFilePath);
+	MeleeWeapon(const float damage, const float range, const unsigned int frameSize, const sf::Vector2i, std::string textureFilePath);
 	~MeleeWeapon();
 	void update(sf::RenderWindow&, sf::RenderTarget&, const Character &, sf::Time) override;
 	void draw(sf::RenderTarget&, sf::RenderStates) const override;
