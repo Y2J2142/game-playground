@@ -1,15 +1,13 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-class Player : public sf::Drawable
+#include "Character.h"
+#include "Weapon.h"
+class Player : public sf::Drawable, public Character
 {
+
+	Weapon* weapon;
+	std::vector<std::unique_ptr<Weapon>> weapons;
 public:
-
-	int health;
-	float movespeed;
-	sf::Vector2f pos;
-
-	sf::Texture texture;
-	sf::Sprite sprite;
 
 	Player() = delete;
 	Player(sf::Vector2f, float movespeed, int health, std::string texturePath);
