@@ -1,6 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-class Character
+class Character : public sf::Drawable
 {
 public:
 
@@ -15,5 +15,8 @@ public:
 	Character();
 	~Character();
 	virtual void update(sf::RenderWindow&, sf::RenderTarget&, sf::Time) =0;
+
+	virtual void draw(sf::RenderTarget &, sf::RenderStates) const;
+	virtual void draw(sf::RenderTarget &) const;
 };
 

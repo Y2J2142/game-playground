@@ -24,16 +24,7 @@ Player::~Player()
 {
 }
 
-void Player::draw(sf::RenderTarget & renderTarget, sf::RenderStates states) const
-{
-	renderTarget.draw(this->sprite, states);
-	
-}
 
-void Player::draw(sf::RenderTarget & renderTarget) const
-{
-	renderTarget.draw(this->sprite);
-}
 
 void Player::update(sf::RenderWindow & renderWindow, sf::RenderTarget & output, sf::Time time)
 {
