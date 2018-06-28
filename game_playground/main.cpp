@@ -26,7 +26,7 @@ int main()
 	};
 	sf::RenderWindow window(sf::VideoMode(800, 600), "Gaem");
 	sf::Event event;
-	Player player(sf::Vector2f(window.getSize().x / 2, window.getSize().y / 2), 5, 100, "../sprites/Knight.png");
+	Player player(sf::Vector2f(64, 64), 5, 100, "../sprites/Knight.png");
 	window.setFramerateLimit(60);
 	TileMap map;
 	if (!map.load("../tileset/tileset.png", level)) return 1;
