@@ -43,28 +43,28 @@ void Player::movementHandler(const sf::RenderWindow & window)
 {
 	if (isMoving)
 	{
+		float currentMoveSpeed = movespeed;
+		if (float distanceToTravel = 128.0f - distanceTraveled; distanceToTravel < movespeed)
+			currentMoveSpeed = distanceToTravel;
+
 		if (dir == UP && distanceTraveled < 128 && !weapon->animator.isPlayingAnimation())
 		{
-			distanceTraveled += movespeed;
-			pos.y -= movespeed;
+			pos.y -= currentMoveSpeed;
 			sprite.setRotation(0.0f);
 		}
 		else if (dir == DOWN && distanceTraveled < 128 && !weapon->animator.isPlayingAnimation())
 		{
-			distanceTraveled += movespeed;
-			pos.y += movespeed;
+			pos.y += currentMoveSpeed;
 			sprite.setRotation(180.0f);
 		}
 		else if (dir == LEFT && distanceTraveled < 128 && !weapon->animator.isPlayingAnimation())
 		{
-			distanceTraveled += movespeed;
-			pos.x -= movespeed;
+			pos.x -= currentMoveSpeed;
 			sprite.setRotation(270.0f);
 		}
 		else if (dir == RIGHT && distanceTraveled < 128 && !weapon->animator.isPlayingAnimation())
 		{
-			distanceTraveled += movespeed;
-			pos.x += movespeed;
+			pos.x += currentMoveSpeed;
 			sprite.setRotation(90.0f);
 		}
 		else
@@ -72,8 +72,9 @@ void Player::movementHandler(const sf::RenderWindow & window)
 			isMoving = false;
 			distanceTraveled = 0;
 		}
-		sprite.setPosition(pos);
 
+		distanceTraveled += currentMoveSpeed;
+		sprite.setPosition(pos);
 	}
 
 
