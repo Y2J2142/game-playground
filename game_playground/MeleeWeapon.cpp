@@ -18,7 +18,7 @@ MeleeWeapon::MeleeWeapon(const float damage, const float range, const unsigned i
 	}
 	attackAnimation.addFrame(1.0f, sf::IntRect(0, 0, frameSize, textureSizeY));
 	attackAnimation(sprite, 0.0f);
-	animator.addAnimation("attack", attackAnimation, sf::seconds(0.05f));
+	animator.addAnimation("attack", attackAnimation, sf::seconds(1.f));
 
 }
 
