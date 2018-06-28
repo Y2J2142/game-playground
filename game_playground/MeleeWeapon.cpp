@@ -12,13 +12,12 @@ MeleeWeapon::MeleeWeapon(const float damage, const float range, const unsigned i
 	this->offset = offset;
 	auto[textureSizeX, textureSizeY] = texture.getSize();
 	sprite.setOrigin(16, textureSizeY);
-	for (int i = 0; i < (textureSizeX / frameSize); ++i)
+
+	animator.addAnimation("attack", [](sf::Sprite & sprite, float progress) 
 	{
-		attackAnimation.addFrame(1.0f, sf::IntRect(i * frameSize, 0, frameSize, textureSizeY));
-	}
-	attackAnimation.addFrame(1.0f, sf::IntRect(0, 0, frameSize, textureSizeY));
-	attackAnimation(sprite, 0.0f);
-	animator.addAnimation("attack", attackAnimation, sf::seconds(0.05f));
+		//lagrange interpolation <3
+		sprite.setScale(1, -4 * (progress*progress) + 4 * progress + 1);
+	}, sf::seconds(1.0f));
 
 }
 
