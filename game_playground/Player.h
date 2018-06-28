@@ -4,12 +4,8 @@
 #include "Weapon.h"
 class Player :  public Character
 {
-	enum direction { UP, DOWN, LEFT, RIGHT };
 public:
 	direction dir;
-	bool isMoving;
-	float distanceTraveled;
-	Weapon* weapon;
 	std::vector<std::unique_ptr<Weapon>> weapons;
 
 

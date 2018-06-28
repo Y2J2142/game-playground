@@ -1,7 +1,9 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <Thor/Animations.hpp>
-#include "Character.h"
+
+class Character;
+
 class Weapon : sf::Drawable
 {
 public:
