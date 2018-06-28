@@ -16,7 +16,7 @@ public:
 	~Character();
 	virtual void update(sf::RenderWindow&, sf::RenderTarget&, sf::Time) =0;
 
-	virtual void draw(sf::RenderTarget &, sf::RenderStates) const;
-	virtual void draw(sf::RenderTarget &) const;
+	void draw(sf::RenderTarget &, sf::RenderStates) const;
+	void draw(sf::RenderTarget &) const;
 };
 

@@ -17,11 +17,11 @@ public:
 
 
 	virtual void attack() = 0;
-	virtual void update(sf::RenderWindow&, sf::RenderTarget&, const Character &, sf::Time);
-	virtual void draw(sf::RenderTarget &, sf::RenderStates) const;
-	virtual void draw(sf::RenderTarget &) const;
+	void update(sf::RenderWindow&, sf::RenderTarget&, const Character &, sf::Time);
+	void draw(sf::RenderTarget &, sf::RenderStates) const;
+	void draw(sf::RenderTarget &) const;
 	Weapon();
-	virtual ~Weapon() = 0;
+	~Weapon();
 
 };
 
