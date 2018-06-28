@@ -43,25 +43,25 @@ void Player::movementHandler(const sf::RenderWindow & window)
 {
 	if (isMoving)
 	{
-		if (dir == UP && distanceTraveled < 128)
+		if (dir == UP && distanceTraveled < 128 && !weapon->animator.isPlayingAnimation())
 		{
 			distanceTraveled += movespeed;
 			pos.y -= movespeed;
 			sprite.setRotation(0.0f);
 		}
-		else if (dir == DOWN && distanceTraveled < 128)
+		else if (dir == DOWN && distanceTraveled < 128 && !weapon->animator.isPlayingAnimation())
 		{
 			distanceTraveled += movespeed;
 			pos.y += movespeed;
 			sprite.setRotation(180.0f);
 		}
-		else if (dir == LEFT && distanceTraveled < 128)
+		else if (dir == LEFT && distanceTraveled < 128 && !weapon->animator.isPlayingAnimation())
 		{
 			distanceTraveled += movespeed;
 			pos.x -= movespeed;
 			sprite.setRotation(270.0f);
 		}
-		else if (dir == RIGHT && distanceTraveled < 128)
+		else if (dir == RIGHT && distanceTraveled < 128 && !weapon->animator.isPlayingAnimation())
 		{
 			distanceTraveled += movespeed;
 			pos.x += movespeed;
