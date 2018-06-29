@@ -4,7 +4,7 @@
 class Character : public sf::Drawable
 {
 protected:
-	enum direction { UP, DOWN, LEFT, RIGHT };
+	enum Direction { UP, DOWN, LEFT, RIGHT };
 public:
 
 	int health;
@@ -12,7 +12,7 @@ public:
 	bool isMoving;
 	float distanceTraveled;
 	
-	direction dir;
+	Direction dir;
 
 	sf::Vector2f pos;
 	sf::Vector2i tilePos;
@@ -24,7 +24,7 @@ public:
 	~Character();
 	virtual void movementHandler() = 0;
 	virtual void movementHandler(const Character &) = 0;
-	void move(direction dir);
+	void move(Direction dir);
 	void draw(sf::RenderTarget &, sf::RenderStates) const;
 	void draw(sf::RenderTarget &) const;
 };
