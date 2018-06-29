@@ -15,6 +15,7 @@ public:
 	direction dir;
 
 	sf::Vector2f pos;
+	sf::Vector2i tilePos;
 	sf::Texture texture;
 	sf::Sprite sprite;
 	Weapon* weapon;
