@@ -7,6 +7,7 @@ class TileMap : public sf::Drawable, public sf::Transformable
 	sf::VertexArray vertexArray;
 	sf::Texture tileset;
 	sf::Vector2u tileSize;
+	std::vector<std::vector<int>> level;
 
 public:
 	TileMap();

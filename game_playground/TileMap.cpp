@@ -13,6 +13,7 @@ TileMap::~TileMap()
 
 bool TileMap::load(const std::string & tileMapPath, std::vector<std::vector<int>> level)
 {
+	this->level = level;
 	if (!this->tileset.loadFromFile(tileMapPath)) return false;
 	
 	auto width = level.size();
