@@ -15,7 +15,6 @@ public:
 
 	bool load(const std::string & tileMapPath, std::vector<std::vector<int>> level);
 	void draw(sf::RenderTarget&, sf::RenderStates)const;
-	//void draw(sf::RenderTarget&)const;
 
 };
 
