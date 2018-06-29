@@ -5,7 +5,7 @@
 class Player :  public Character
 {
 public:
-	direction dir;
+	
 	std::vector<std::unique_ptr<Weapon>> weapons;
 
 

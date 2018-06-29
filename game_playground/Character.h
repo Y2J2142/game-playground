@@ -12,6 +12,8 @@ public:
 	bool isMoving;
 	float distanceTraveled;
 	
+	direction dir;
+
 	sf::Vector2f pos;
 	sf::Texture texture;
 	sf::Sprite sprite;
