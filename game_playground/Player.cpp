@@ -31,7 +31,7 @@ Player::~Player()
 
 void Player::update(sf::RenderWindow & renderWindow, sf::RenderTarget & output, sf::Time time)
 {
-	movementHandler(renderWindow);
+	movementHandler();
 	if(weapon)
 		this->weapon->update(renderWindow, output, *(this), time);
 	draw(output);
@@ -39,7 +39,7 @@ void Player::update(sf::RenderWindow & renderWindow, sf::RenderTarget & output, 
 }
 
 
-void Player::movementHandler(const sf::RenderWindow & window)
+void Player::movementHandler()
 {
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && !isMoving)

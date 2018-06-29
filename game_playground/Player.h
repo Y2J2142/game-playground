@@ -14,6 +14,6 @@ public:
 	~Player();
 
 	void update(sf::RenderWindow& renderWindow, sf::RenderTarget & output, sf::Time time) override;
-	void movementHandler(const sf::RenderWindow &);
+	void movementHandler();
 };
 
