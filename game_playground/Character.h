@@ -11,7 +11,7 @@ public:
 	float movespeed;
 	bool isMoving;
 	float distanceTraveled;
-	
+	bool canMove[4];
 	Direction dir;
 
 	sf::Vector2f pos;

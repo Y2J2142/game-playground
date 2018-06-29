@@ -2,6 +2,7 @@
 #include "Player.h"
 #define _USE_MATH_DEFINES 
 #include <math.h>  
+#include <algorithm>
 #include "MeleeWeapon.h"
 
 
@@ -20,6 +21,7 @@ Player::Player(sf::Vector2f pos, float movespeed, int health, std::string textur
 	this->sprite.setScale(2.0f, 2.0f);
 	this->sprite.setPosition(sf::Vector2f(this->pos));
 	this->weapon = new MeleeWeapon(10, 10, 128, { -40, -10 }, "../sprites/sword_anim2.png");
+	std::fill(std::begin(canMove), std::end(canMove), true);
 }
 
 
