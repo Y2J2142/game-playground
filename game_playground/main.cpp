@@ -25,7 +25,6 @@ int main()
 		{ 1, 0, 3, 0, 0, 0, 1, 1 } 
 	};
 	sf::RenderWindow window(sf::VideoMode(800, 600), "Gaem");
-	sf::Event event;
 	Player player(sf::Vector2f(64, 64), 5, 100, "../sprites/Knight.png");
 	window.setFramerateLimit(60);
 	TileMap map;
