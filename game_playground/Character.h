@@ -21,7 +21,6 @@ public:
 
 	Character();
 	~Character();
-	virtual void update(sf::RenderWindow&, sf::RenderTarget&, sf::Time) =0;
 	virtual void movementHandler() = 0;
 	virtual void movementHandler(const Character &) = 0;
 	void move(direction dir);
