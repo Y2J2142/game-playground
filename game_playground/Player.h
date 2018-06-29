@@ -15,5 +15,6 @@ public:
 
 	void update(sf::RenderWindow& renderWindow, sf::RenderTarget & output, sf::Time time);
 	void movementHandler();
+	void movementHandler(const Character &);
 };
 

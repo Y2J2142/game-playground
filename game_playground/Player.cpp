@@ -29,6 +29,10 @@ Player::~Player()
 
 
 
+void Player::movementHandler(const Character &)
+{
+	movementHandler();
+}
 void Player::update(sf::RenderWindow & renderWindow, sf::RenderTarget & output, sf::Time time)
 {
 	movementHandler();
