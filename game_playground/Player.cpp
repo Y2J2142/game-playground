@@ -48,22 +48,22 @@ void Player::update(sf::RenderWindow & renderWindow, sf::RenderTarget & output, 
 void Player::movementHandler()
 {
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && !isMoving)
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && !isMoving && canMove[UP])
 	{
 		dir = UP;
 		isMoving = true;
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && !isMoving)
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && !isMoving && canMove[DOWN])
 	{
 		dir = DOWN;
 		isMoving = true;
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && !isMoving)
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && !isMoving && canMove[LEFT])
 	{
 		dir = LEFT;
 		isMoving = true;
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && !isMoving)
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && !isMoving && canMove[RIGHT])
 	{
 		dir = RIGHT;
 		isMoving = true;

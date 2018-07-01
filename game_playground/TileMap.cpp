@@ -55,6 +55,28 @@ void TileMap::draw(sf::RenderTarget & renderTarget, sf::RenderStates states) con
 	renderTarget.draw(vertexArray, states);
 }
 
+void TileMap::restrictMovement(Character & character)
+{
+	auto[x, y] = character.tilePos;
+
+	if (level[x - 1][y] == 4)
+		character.canMove[Character::Direction::LEFT] = false;
+	else
+		character.canMove[Character::Direction::LEFT] = true;
+	if (level[x + 1][y] == 4)
+		character.canMove[Character::Direction::RIGHT]= false;
+	else
+		character.canMove[Character::Direction::RIGHT] = true;
+	if (level[x][y - 1] == 4)
+		character.canMove[Character::Direction::UP] = false;
+	else
+		character.canMove[Character::Direction::UP] = true;
+	if (level[x][y + 1] == 4)
+		character.canMove[Character::Direction::DOWN] = false;
+	else
+		character.canMove[Character::Direction::DOWN] = true;
+}
+
 //void TileMap::draw(sf::RenderTarget& renderTarget)const
 //{
 //	renderTarget.draw(vertexArray);

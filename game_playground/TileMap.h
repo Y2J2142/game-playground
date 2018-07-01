@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <vector>
+#include "Character.h"
 
 class TileMap : public sf::Drawable, public sf::Transformable
 {
@@ -16,5 +17,6 @@ public:
 	bool load(const std::string & tileMapPath, std::vector<std::vector<int>> level);
 	void draw(sf::RenderTarget&, sf::RenderStates)const;
 
+	void restrictMovement(Character &);
 };
 

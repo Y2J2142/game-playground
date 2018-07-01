@@ -3,9 +3,8 @@
 #include "Weapon.h"
 class Character : public sf::Drawable
 {
-protected:
-	enum Direction { UP, DOWN, LEFT, RIGHT };
 public:
+	enum Direction { UP, DOWN, LEFT, RIGHT };
 
 	int health;
 	float movespeed;
