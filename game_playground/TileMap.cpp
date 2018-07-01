@@ -79,23 +79,11 @@ void TileMap::restrictMovement(Character & character)
 {
 	auto[x, y] = character.tilePos;
 	std::fill(std::begin(character.canMove), std::end(character.canMove), false);
-	if (collisionLayer[x - 1][y])
-		character.canMove[Character::Direction::LEFT] = false;
-	else
-		character.canMove[Character::Direction::LEFT] = true;
-	if (collisionLayer[x + 1][y])
-		character.canMove[Character::Direction::RIGHT]= false;
-	else
-		character.canMove[Character::Direction::RIGHT] = true;
-	if (collisionLayer[x][y - 1])
-		character.canMove[Character::Direction::UP] = false;
-	else
-		character.canMove[Character::Direction::UP] = true;
-	if (collisionLayer[x][y + 1])
-		character.canMove[Character::Direction::DOWN] = false;
-	else
-		character.canMove[Character::Direction::DOWN] = true;
 
+	character.canMove[Character::Direction::LEFT] = !collisionLayer[x - 1][y];
+	character.canMove[Character::Direction::RIGHT] = !collisionLayer[x + 1][y];
+	character.canMove[Character::Direction::UP] = !collisionLayer[x][y - 1];
+	character.canMove[Character::Direction::DOWN] = !collisionLayer[x][y + 1];
 }
 //void TileMap::draw(sf::RenderTarget& renderTarget)const
 //{
