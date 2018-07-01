@@ -72,13 +72,7 @@ void TileMap::setCollisionLayer()
 
 	for(auto i = 0; i < collisionLayer.size(); ++i)
 		for (auto j = 0; j < collisionLayer[0].size(); ++j)
-		{
-			for (const auto tile : TileMap::collisionTiles)
-			{
-				if (level[i][j] == tile)
-					collisionLayer[i][j] = true;
-			}
-		}
+			collisionLayer[i][j] = std::find(std::begin(TileMap::collisionTiles), std::end(TileMap::collisionTiles), level[i][j]) != std::end(TileMap::collisionTiles);
 }
 
 void TileMap::restrictMovement(Character & character)
