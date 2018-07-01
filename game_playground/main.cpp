@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include "Player.h"
 #include "TileMap.h"
+#include "Enemy.h"
 #include <iostream>
 int main()
 {
@@ -28,6 +29,7 @@ int main()
 	};
 	sf::RenderWindow window(sf::VideoMode(800, 600), "Gaem");
 	Player player(sf::Vector2f(192, 192), 5, 100, "../sprites/Knight.png");
+	Enemy enemy(sf::Vector2f(192 + 128 * 2, 192 + 128 * 2), 5, 100, "../sprites/Knight.png");
 	window.setFramerateLimit(60);
 	TileMap map;
 	if (!map.load("../tileset/tileset.png", level)) return 1;
@@ -38,6 +40,8 @@ int main()
 		window.setView(sf::View(player.pos, static_cast<sf::Vector2f>(window.getSize())));
 		window.draw(map);
 		map.restrictMovement(player);
+		map.restrictMovement(enemy);
+		enemy.update(window, window, clock.getElapsedTime(), player);
 		player.update(window, window, clock.restart());
 		
 		
