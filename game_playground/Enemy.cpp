@@ -44,28 +44,26 @@ void Enemy::movementHandler(const Character & target)
 	auto[thisX, thisY] = this->pos;
 	auto[targetX, targetY] = target.pos;
 
-	if (targetX > thisX && canMove[RIGHT])
+	if (targetX > thisX && !isMoving && canMove[RIGHT])
 	{
 		isMoving = true;
 		dir = RIGHT;
-		move();
 	}
-	else if (targetX < thisX && canMove[LEFT])
+	else if (targetX < thisX && !isMoving && canMove[LEFT])
 	{
 		isMoving = true;
 		dir = LEFT;
-		move();
 	}
-	else if (targetY > thisY && canMove[DOWN])
+	else if (targetY > thisY && !isMoving && canMove[DOWN])
 	{
 		isMoving = true;
 		dir = DOWN;
-		move();
 	}
-	else if (targetY < thisY && canMove[UP])
+	else if (targetY < thisY && !isMoving && canMove[UP])
 	{
 		isMoving = true;
 		dir = UP;
-		move();
 	}
+	move();
+
 }
