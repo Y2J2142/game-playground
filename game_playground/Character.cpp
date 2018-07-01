@@ -12,7 +12,7 @@ Character::~Character()
 }
 
 
-void Character::move(Direction dir)
+void Character::move()
 {
 	if (isMoving)
 	{

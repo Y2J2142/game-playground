@@ -23,7 +23,7 @@ public:
 	~Character();
 	virtual void movementHandler() = 0;
 	virtual void movementHandler(const Character &) = 0;
-	void move(Direction dir);
+	void move();
 	void draw(sf::RenderTarget &, sf::RenderStates) const;
 	void draw(sf::RenderTarget &) const;
 };

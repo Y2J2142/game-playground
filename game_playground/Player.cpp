@@ -74,6 +74,6 @@ void Player::movementHandler()
 		if (weapon)
 			weapon->attack();
 
-	move(dir);
+	move();
 
 }
