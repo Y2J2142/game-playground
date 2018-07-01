@@ -37,8 +37,9 @@ int main()
 		window.clear();
 		window.setView(sf::View(player.pos, static_cast<sf::Vector2f>(window.getSize())));
 		window.draw(map);
-		player.update(window, window, clock.restart());
 		map.restrictMovement(player);
+		player.update(window, window, clock.restart());
+		
 		
 		window.display();
 

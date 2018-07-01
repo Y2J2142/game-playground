@@ -1,5 +1,6 @@
 #include "TileMap.h"
 #include <iostream>
+#include <algorithm>
 TileMap::TileMap()
 {
 	tileSize = sf::Vector2u(128, 128);
@@ -58,7 +59,7 @@ void TileMap::draw(sf::RenderTarget & renderTarget, sf::RenderStates states) con
 void TileMap::restrictMovement(Character & character)
 {
 	auto[x, y] = character.tilePos;
-
+	std::fill(std::begin(character.canMove), std::end(character.canMove), false);
 	if (level[x - 1][y] == 4)
 		character.canMove[Character::Direction::LEFT] = false;
 	else
@@ -75,8 +76,8 @@ void TileMap::restrictMovement(Character & character)
 		character.canMove[Character::Direction::DOWN] = false;
 	else
 		character.canMove[Character::Direction::DOWN] = true;
-}
 
+}
 //void TileMap::draw(sf::RenderTarget& renderTarget)const
 //{
 //	renderTarget.draw(vertexArray);

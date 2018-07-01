@@ -49,11 +49,8 @@ void Character::move(Direction dir)
 		distanceTraveled += currentMoveSpeed;
 		sprite.setPosition(pos);
 	}
-	else
-	{
 		tilePos.x = (pos.x - 64) / 128;
 		tilePos.y = (pos.y - 64) / 128;
-	}
 }
 
 void Character::draw(sf::RenderTarget & renderTarget, sf::RenderStates states) const
