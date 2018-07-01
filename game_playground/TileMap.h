@@ -10,7 +10,7 @@ class TileMap : public sf::Drawable, public sf::Transformable
 	sf::Vector2u tileSize;
 	std::vector<std::vector<int>> level;
 	std::vector<std::vector<bool>> collisionLayer;
-	static constexpr int collisionTiles[] = { 1, 2, 4 };
+	static constexpr int collisionTiles[] = { 1, 3, 4 };
 public:
 	TileMap();
 	~TileMap();
